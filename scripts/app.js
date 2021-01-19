@@ -6,6 +6,15 @@ example: as you type a username into a signup form, it tells you if that usernam
 3. render
 */
 
+async function main() {
+    const button = document.getElementById('new-joke');
+    button.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const joke = await getJoke();
+        renderJoke(joke);
+    });
+}
+main();
 
 async function getJoke() {
     // Show the joke on the page:
@@ -24,9 +33,9 @@ async function getJoke() {
     return jokeData.joke;
 }
 
-async function renderJoke() {
+async function renderJoke(joke) {
     // async b/c we will await getJoke
-    const joke = await getJoke();
+    // const joke = await getJoke();
 
     // create the DOM element    
     const p = document.createElement('p');
