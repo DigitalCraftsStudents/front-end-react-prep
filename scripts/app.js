@@ -7,7 +7,7 @@ example: as you type a username into a signup form, it tells you if that usernam
 */
 
 async function main() {
-    const button = document.querySelector('#new-joke');
+    const button = document.querySelector('[data-js-new-joke]');
     button.addEventListener('click', async (event) => {
         event.preventDefault();
         const joke = await getJoke();
@@ -44,5 +44,5 @@ async function renderJoke(joke) {
     p.textContent = joke;
 
     // attach it to an existing DOM element
-    document.getElementById('root').appendChild(p);
+    document.querySelector('[data-js-root]').appendChild(p);
 }
