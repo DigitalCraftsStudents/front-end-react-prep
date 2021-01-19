@@ -7,7 +7,7 @@ example: as you type a username into a signup form, it tells you if that usernam
 */
 
 async function main() {
-    const button = document.getElementById('new-joke');
+    const button = document.querySelector('#new-joke');
     button.addEventListener('click', async (event) => {
         event.preventDefault();
         const joke = await getJoke();
